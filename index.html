@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #canvas {
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script src="js/MyTool.js"></script>
+    <script src="js/UnderScore.js"></script>
+    <script src="js/FrameUtil.js"></script>
+    <script src="js/StaticResourceUtil.js"></script>
+    <script src="js/Game.js"></script>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        document.getElementById('canvas').width = myTool.client().width
+        document.getElementById('canvas').height = myTool.client().height
+
+        //开始游戏
+        let game = new Game({
+            'canvasId':'canvas'
+        })
+        game.run()
+    </script>
+</body>
+
+</html>
